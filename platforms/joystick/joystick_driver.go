@@ -37,6 +37,9 @@ const (
 
 	// Nintendo Switch Joycon Controller Pair
 	NintendoSwitchPair = "joyconPair"
+
+	// Logitech G27 Steering Wheel
+	LogitechG27 = "logitechG27"
 )
 
 // Driver represents a joystick
@@ -145,6 +148,8 @@ func (j *Driver) Start() (err error) {
 		j.config = shieldConfig
 	case NintendoSwitchPair:
 		j.config = joyconPairConfig
+	case LogitechG27:
+		j.config = logitechG27config
 	default:
 		err := j.loadFile()
 		if err != nil {
